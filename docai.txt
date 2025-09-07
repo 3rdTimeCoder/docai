@@ -1,0 +1,8 @@
+[MCP Agent]
+   |
+   |--> [FileSystemResource] - reads project structure
+   |--> [LLM Model] - infers what the project does
+   |--> [Tool: generateReadme()] - creates content
+   |--> [Tool: updateDocs()] - writes to filesystem
+   |
+  Returns updated content or patches

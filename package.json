@@ -1,0 +1,26 @@
+{
+  "name": "docai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "server:build": "npx tsc",
+    "server:build:watch": "tsc --watch",
+    "server:dev": "tsx src/server.ts",
+    "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.16.6",
+    "@types/node": "^24.3.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "zod": "^3.25.76"
+  }
+}
