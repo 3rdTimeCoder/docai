@@ -1,6 +1,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { generateReadmeTool } from './tools/generateReadme.js';
+import { getFileSystemResource } from './resources/fileSysResource.js';
+import { generateReadmePrompt } from './prompts/buildPrompt.js';
 
 const server = new McpServer({
     name: 'DocAI',
@@ -14,7 +16,12 @@ const server = new McpServer({
     }
 });
 
+getFileSystemResource({ server });
+
+generateReadmePrompt({ server });
+
 generateReadmeTool({ server });
+
 
 async function main() {
     const transport = new StdioServerTransport();
@@ -22,7 +29,4 @@ async function main() {
     console.log('DocAI MCP Server is running and connected via stdio...');
 }
 
-main().catch((error) => {
-    console.error('Error starting DocAI MCP Server:', error);
-    process.exit(1);
-});
+main();
