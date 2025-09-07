@@ -1,7 +1,7 @@
 {
   "name": "docai",
   "version": "1.0.0",
-  "description": "",
+  "description": "an mcp server for writing documentation for codebases",
   "main": "src/server.js",
   "scripts": {
     "server:build": "npx tsc",
@@ -10,7 +10,7 @@
     "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nomah S.",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
+    "globby": "^14.1.0",
     "zod": "^3.25.76"
   }
 }
